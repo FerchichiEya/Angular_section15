@@ -1,0 +1,36 @@
+<div class="container">
+    <div>
+    <h2>Modifier un Voiture :</h2>
+    </div>
+    <form >
+    <!-- <div  class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID Voiture</label>
+    <input readonly type="text" [(ngModel)]="currentVoiture.idVoiture"name="idVoiture" class="form-control">
+    </div> -->
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom Voiture</label>
+    <input type="text"[(ngModel)]= "currentVoiture.nomVoiture"name="nomVoiture" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Prix Voiture</label>
+    <input type="number" [(ngModel)]= "currentVoiture.prixVoiture"name="prixVoiture" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Date création</label>
+<input type="date" [ngModel]="currentVoiture.dateCreation | date: 'yyyy-MM-dd'"
+(ngModelChange)=" currentVoiture.dateCreation= $event" name="dateCreation"
+ class="form-control">
+</div>
+ <div class="col-sm-4 col-md-4 col-lg-4">
+    <select class="form-control form-control-lg" id="idCat" name="idCat"
+    [(ngModel)]="updateCatId">
+    <option *ngFor="let cat of categories" [value]="cat.idCat" >
+    {{cat.nomCat}}
+    </option>
+    </select>
+    </div> 
+<div class="mt-2">
+<button type="submit" (click)="updateVoiture()" class="btn btn-success">Modifer</button>
+</div>
+</form>
+</div>

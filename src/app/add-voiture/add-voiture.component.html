@@ -1,0 +1,36 @@
+<div class="container">
+    <div>
+        <h2>Ajouter un Voiture :</h2>
+    </div>
+    <form>
+        <!-- <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Voiture</label>
+            <input type="text" [(ngModel)]="newVoiture.idVoiture" name="idVoiture" class="form-control">
+        </div> -->
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Voiture</label>
+            <input type="text" [(ngModel)]="newVoiture.nomVoiture" name="nomVoiture" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Prix Voiture</label>
+            <input type="number" [(ngModel)]="newVoiture.prixVoiture" name="prixVoiture" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date création</label>
+            <input type="date" [(ngModel)]="newVoiture.dateCreation" name="dateCreation" class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Categorie</label>
+            <select class="form-control form-control-lg" id="idCat" name="idCat" [(ngModel)]="newIdCat">
+                <option *ngFor="let cat of categories" [value]="cat.idCat">
+                    {{cat.nomCat}}
+                </option>
+            </select>
+        
+        </div>
+        <div class="mt-2">
+            <button type="submit" (click)="addVoiture()" class="btn btn-success">Ajouter</button>
+        </div>
+    </form>
+</div>
